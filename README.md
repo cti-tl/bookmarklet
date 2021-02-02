@@ -1,10 +1,18 @@
 # bookmarklet（　開発原案　）
-ブックマークレットの作成を効率化するためのサービスを作成するためのリポジトリです！
+ブックマークレットの作成を効率化するためのサービスを開発するためのリポジトリです！
 
 ## なぜ作ったのか
 
 - 自分自身がブックマークレットを作成するときに成形する作業が手間がかかっていたため、
 　効率よく作成できないかと思ったのが作成に至った経緯です！
+ 
+### 現状利用サービス  
+
+#### Javascript 成形
+[JSきれい ～JavaScript整形ツール～](https://tools.m-bsys.com/development_tooles/jsbeautifier.php)
+
+#### ブックマークレット変換
+[ブックマークレット変換（成形）](http://websitetools.biz-box.jp/js_bookmarklet.php)
 
 ## 機能
 
