@@ -4,11 +4,10 @@ const assets = [
   "./",
   "./index.html",
   "./manifest.json",
-  "./css/style.css",
-  "./css/reset.css",
-  "./js/app.js",
-  "./js/beautify.min.js",
-  "./data/tool_icon.png",
+  "./css/*",
+  "./ja/*",
+  "./data/*",
+  "./codemirror/*",
 ];
 
 self.addEventListener("install", (evt) => {
