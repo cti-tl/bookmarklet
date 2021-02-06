@@ -1,0 +1,229 @@
+:root {
+  --main-text: #333;
+  --main-bg: #fff;
+  --main-stripe: #90cad44f;
+  --main-link: black;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-text: #ddd;
+    --main-bg: #000;
+    --main-stripe: #000000ec;
+    --main-link: gray;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  user-select: none; /* CSS3 */
+  -moz-user-select: none; /* Firefox */
+  -webkit-user-select: none; /* Safari、Chromeなど */
+  -ms-user-select: none; /* IE10かららしい */
+}
+
+html {
+  overflow-y: scroll;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template:
+    "... ...... ..." 0px
+    "... header ..."
+    "... ...... ..." 0px
+    "... center ..." 1fr
+    "... ...... ..." 0px
+    "... footer ..." 120px
+    "... ...... ..." 0px
+    / 0px minmax(800px, 1fr) 0px;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+}
+
+body {
+  /* 左斜め */
+  background-color: var(--main-stripe);
+  background-image: repeating-linear-gradient(
+    45deg,
+    var(--main-bg),
+    var(--main-bg) 7px,
+    transparent 0,
+    transparent 14px
+  );
+  transition: 0.3s;
+}
+
+header {
+  grid-area: header;
+}
+header h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--main-text);
+  padding: 10px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+a {
+  color: var(--main-link);
+  text-decoration: none;
+  transition: 0.3s;
+}
+label {
+  color: var(--main-text);
+}
+a:hover {
+  text-decoration: underline;
+}
+input,
+textarea,
+.CodeMirror * {
+  -webkit-user-select: auto; /* Safari、Chromeなど */
+}
+
+.CodeMirror {
+  text-align: left;
+  resize: vertical;
+}
+header h2 {
+  font-size: 2rem;
+}
+main {
+  grid-area: center;
+}
+main {
+  text-align: center;
+}
+main img {
+  display: inline;
+  max-width: 400px;
+}
+main img:not([alt]) {
+  filter: none;
+}
+main div.label {
+  text-align: left;
+  padding-left: 10px;
+}
+main input[type="textbox"] {
+  width: 100%;
+  height: auto;
+}
+main textarea {
+  resize: vertical;
+  width: 100%;
+  min-height: 280px;
+  height: auto;
+}
+main div.contents {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+footer {
+  grid-area: footer;
+}
+footer div {
+  display: flex;
+  flex-direction: column;
+}
+footer a {
+  vertical-align: top;
+  width: auto;
+  height: auto;
+}
+footer div.source {
+  text-align: left;
+  font-size: 1rem;
+  color: var(--main-text);
+  background-color: var(--main-bg);
+  padding: 10px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+footer div.banner {
+  text-align: center;
+  width: 100%;
+  vertical-align: middle;
+  padding: 10px;
+  box-sizing: border-box;
+}
+footer div.banner * {
+  margin: 0px;
+  padding: 0px;
+}
+footer div.banner img {
+  max-height: 80px;
+}
+footer div.copyright {
+  text-align: center;
+}
+footer div.copyright small {
+  color: gray;
+  font-size: max(12px, 0.6rem);
+}
+.button1 {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.button1 a {
+  color: #fff;
+  display: inline-block;
+  padding: 0.5em 2em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
+    0 1px 2px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  border: 1px solid #0059b2;
+  border-bottom-color: #20559a;
+  border-radius: 3px;
+  background-color: #0071e1;
+  background: -moz-linear-gradient(top, #2693ff, #0071e1);
+  background: -webkit-gradient(linear, 0 0, 0 100%, from(#2693ff), to(#0071e1));
+  filter: progid:DXImageTransform.Microsoft.gradient(StartColorStr='#2693FF', EndColorStr='#0071E1');
+}
+.button1 a:hover {
+  background: -moz-linear-gradient(top, #2082e3, #0166cb);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#2082e3),
+    to(#0166cb)
+  );
+  filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#2082E3', EndColorStr='#0166CB');
+}
+.button1 a:active {
+  box-shadow: 0px 1px 0px rgba(255, 255, 255, 0.6),
+    inset 0px 1px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: none;
+  background: -moz-linear-gradient(top, #025ab1, #1c71c5);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#025ab1),
+    to(#1c71c5)
+  );
+  filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#025AB1', EndColorStr='#1C71C5');
+}
+
+@media screen and (max-width: 800px) {
+  body {
+    grid-template:
+      "header"
+      "center" 1fr
+      "footer" 100px / 100%;
+  }
+}

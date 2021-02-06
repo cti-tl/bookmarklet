@@ -1,0 +1,72 @@
+<!--
+    // Copyright © 2021 bell.cti-tl.com All Rights Reserved.
+    // Supported by Team Qin-Salon
+    // This project is licensed under the MIT License
+    // https://opensource.org/licenses/mit-license.php
+ -->
+
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="bookmarklet Maker" content="index" />
+    <meta
+      name="Description"
+      content="ブックマークレットを作る！というシンプルな機能に特化したサービスです！"
+    />
+    <meta name="theme-color" content="#317EFB" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1.0,minimum-scale=1.0"
+    />
+    <meta property="og:title" content="bookmarklet Maker" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="ブックマークレットを作る！というシンプルな機能に特化したサービスです！"
+    />
+    <meta property="og:url" content="https://oto.cti-tl.com/bkmk" />
+    <meta property="og:site_name" content="bookmarklet Maker" />
+    <meta property="og:image" content="data/tool_icon.png" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" type="image/png" href="data/tool_icon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="data/tool_icon.png" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+    <script src="codemirror/lib/codemirror.js"></script>
+    <script src="codemirror/addon/edit/matchbrackets.js"></script>
+    <script src="codemirror/addon/comment/continuecomment.js"></script>
+    <script src="codemirror/addon/comment/comment.js"></script>
+    <link href="css/style.css" rel="stylesheet" />
+    <script src="codemirror/mode/javascript/javascript.js"></script>
+    <title>bookmarklet Maker</title>
+  </head>
+  <body>
+    <header><h2>bookmarklet Maker</h2></header>
+    <main>
+      <div>
+        <div class="label"><label>Title</label></div>
+        <div class="contents"><input type="textbox" id="title_name" onChange="jscompCM()" value="bookmarklet"></input></div>
+      </div>
+      <div>
+        <div class="label"><label>Body</label></div>
+        <div class="contents"><textarea id="code" name="code"></textarea></div>
+      </div>
+      <div><p class="button1"><a href="" id="bk">bookmarklet</a></p></div>
+    </main>
+    <footer>
+      <div class="banner">
+        <script src="js/bannerMaker.js" async></script>
+      </div>
+      <div class="copyright">
+        <small>Copyright © 2021 bcti-tl.com All Rights Reserved.</small>
+      </div>
+    </footer>
+    <script src="js/startCodemirror.js" async></script>
+    <script src="js/beautify.min.js" defer></script>
+    <script src="js/app.js" defer></script>
+  </body>
+</html>
