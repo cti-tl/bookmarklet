@@ -9,6 +9,7 @@
 <html lang="ja" prefix="og: http://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="bookmarklet Maker" content="index" />
     <meta
       name="Description"
@@ -35,7 +36,7 @@
     <link rel="icon" type="image/png" href="data/tool_icon.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="data/tool_icon.png" />
     <link href="css/reset.css" rel="stylesheet" />
-    <link rel="stylesheet" href="codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="codemirror/lib/codemirror.css" />
     <script src="codemirror/lib/codemirror.js"></script>
     <script src="codemirror/addon/edit/matchbrackets.js"></script>
     <script src="codemirror/addon/comment/continuecomment.js"></script>
@@ -49,13 +50,27 @@
     <main>
       <div>
         <div class="label"><label>Title</label></div>
-        <div class="contents"><input type="textbox" id="title_name" onChange="jscompCM()" value="bookmarklet"></input></div>
+        <div class="contents">
+          <input
+            type="text"
+            id="title_name"
+            onChange="jscompCM()"
+            value="bookmarklet"
+          />
+        </div>
       </div>
       <div>
         <div class="label"><label>Body</label></div>
         <div class="contents"><textarea id="code" name="code"></textarea></div>
       </div>
-      <div><p class="button1"><a href="" id="bk">bookmarklet</a></p></div>
+      <div>
+        <div class="contents">
+          <div id="sample" name="sample" class="sample"></div>
+        </div>
+      </div>
+      <div>
+        <p class="button1"><a href="" id="bk">bookmarklet</a></p>
+      </div>
     </main>
     <footer>
       <div class="banner">

@@ -9,6 +9,7 @@ function jscompCM() {
   );
   editor.clearHistory();
   mkLink(tn.value, doc.getValue());
+  sampleReset();
 }
 
 function change() {
@@ -28,6 +29,9 @@ function mkLink(title, url) {
   //	count.innerHTML = ' ('+ t.length + ' chars)';
   bk.href = t;
   bk.innerHTML = title;
+}
+function sampleReset() {
+  document.getElementById("sample").innerHTML = "";
 }
 
 const dragoverData = function (event) {

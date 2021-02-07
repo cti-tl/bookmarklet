@@ -116,7 +116,7 @@ main div.label {
   text-align: left;
   padding-left: 10px;
 }
-main input[type="textbox"] {
+main input[type="text"] {
   width: 100%;
   height: auto;
 }
@@ -127,6 +127,8 @@ main textarea {
   height: auto;
 }
 main div.contents {
+  margin-top: 10px;
+  margin-bottom: 5px;
   padding-left: 20px;
   padding-right: 20px;
 }
