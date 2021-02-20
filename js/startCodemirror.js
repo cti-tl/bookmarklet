@@ -10,7 +10,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
 editor.setSize("100%", "100%");
 var doc = editor.getDoc();
 var reader = new FileReader(); // FileReaderオブジェクトの生成
-reader.readAsText("/sample/sample.js"); // 選択されたファイル(fileの先頭要素）を文字列として読み込む
+reader.readAsText("../sample/sample.js"); // 選択されたファイル(fileの先頭要素）を文字列として読み込む
 
 // 読み込みが完了した際に実行される処理
 reader.onload = function (e) {
