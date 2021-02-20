@@ -9,14 +9,12 @@ var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
 });
 editor.setSize("100%", "100%");
 var doc = editor.getDoc();
-var reader = new FileReader(); // FileReaderオブジェクトの生成
-reader.readAsText("/sample/sample.js"); // 選択されたファイル(fileの先頭要素）を文字列として読み込む
-
-// 読み込みが完了した際に実行される処理
-reader.onload = function (e) {
-  //document.getElementById("text").innerHTML = reader.result;
-  doc.setValue("javascript:" + reader.result);
-};
+doc.setValue(`javascript: (function(d){
+  let ById = (id) => d.getElementById(id);
+  let ByNames = (name, index = 0) => d.getElementsByName(name)[index];
+  let q = (selector, index = 0) => d.querySelectorAll(selector)[index];
+  alert('test');
+  })(document);`);
 
 window.onload = function () {
   jscompCM();
