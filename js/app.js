@@ -1,4 +1,4 @@
-function jscompCM() {
+function jscompCM(ele=null) {
   const tn = document.querySelector("#title_name");
   let doc = editor.getDoc();
   const e = document.querySelector("#code");
@@ -9,8 +9,12 @@ function jscompCM() {
   );
   editor.clearHistory();
   let code = doc.getValue();
-  let data = getTitle(tn.value,code);
-  tn.value = data['title'];
+  if(!ele){
+    let data = getTitle(tn.value,code);
+    tn.value = data['title'];
+  }else{
+    let data = getTitle(tn.value,code,true);
+  }
   doc.setValue(data['code']);
   mkLink(data['title'], data['code']);
   sampleReset();
@@ -22,12 +26,12 @@ function change() {
   mkLink(tn.value, e.value);
 }
 
-function getTitle(title,code){
+function getTitle(title,code,flg=false){
   if(code){
   let result = /\/\*__mklet_title:(.*?)__\*\//.exec(code);
   if(result){
     if(title !== result[1]){
-      title = result[1];
+      title = flg?title:result[1];
       code = code.replace(result[0],'/*__mklet_title:' + title + '__*/');
     }
   }else{
