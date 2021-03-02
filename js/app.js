@@ -11,6 +11,7 @@ function jscompCM() {
   let code = doc.getValue();
   let data = getTitle(tn.value,code);
   tn.value = data['title'];
+  doc.setValue(data['code']);
   mkLink(data['title'], data['code']);
   sampleReset();
 }
