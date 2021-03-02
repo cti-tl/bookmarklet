@@ -8,7 +8,9 @@ function jscompCM() {
     })
   );
   editor.clearHistory();
-  mkLink(tn.value, doc.getValue());
+  let code = doc.getValue();
+  let data = getTitle(tn.value,code);
+  mkLink(data['title'], data['code']);
   sampleReset();
 }
 
@@ -16,6 +18,22 @@ function change() {
   const tn = document.querySelector("#title_name");
   const e = document.querySelector("#code");
   mkLink(tn.value, e.value);
+}
+
+function getTitle(title,code){
+  let result = /\/\*__mklet_title:(.*?)__\*\//.exec(code);
+  if(result){
+    if(title !== result[1]){
+      title = result[1];
+      code = code.replace(result[0],'/*__mklet_title:' + title + '__*/');
+    }
+  }else{
+    code = code + '/*__mklet_title:' + title + '__*/';
+  }
+  return {
+   title:title,
+    code:code,
+  };
 }
 
 function mkLink(title, url) {
