@@ -10,6 +10,7 @@ function jscompCM() {
   editor.clearHistory();
   let code = doc.getValue();
   let data = getTitle(tn.value,code);
+  tn.value = data['title'];
   mkLink(data['title'], data['code']);
   sampleReset();
 }
