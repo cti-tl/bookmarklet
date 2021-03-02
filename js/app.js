@@ -23,6 +23,7 @@ function change() {
 }
 
 function getTitle(title,code){
+  if(code){
   let result = /\/\*__mklet_title:(.*?)__\*\//.exec(code);
   if(result){
     if(title !== result[1]){
@@ -31,6 +32,7 @@ function getTitle(title,code){
     }
   }else{
     code = code + '/*__mklet_title:' + title + '__*/';
+  }
   }
   return {
    title:title,
