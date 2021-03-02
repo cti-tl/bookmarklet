@@ -9,11 +9,15 @@ function jscompCM(ele=null) {
   );
   editor.clearHistory();
   let code = doc.getValue();
+  let data = {
+   title:null,
+    code:null,
+  };
   if(!ele){
-    let data = getTitle(tn.value,code);
+    data = getTitle(tn.value,code);
     tn.value = data['title'];
   }else{
-    let data = getTitle(tn.value,code,true);
+    data = getTitle(tn.value,code,true);
   }
   doc.setValue(data['code']);
   mkLink(data['title'], data['code']);
