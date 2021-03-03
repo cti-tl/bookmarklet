@@ -26,6 +26,7 @@ function jscompCM(ele=null) {
 
 document.body.addEventListener('keypress', onKeyPress);
 function onKeyPress(e) {
+  e.preventDefault();
   /*if (
     e.keyCode === 13 ||
     (e.keyCode === 13 &&
