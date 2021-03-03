@@ -24,6 +24,37 @@ function jscompCM(ele=null) {
   sampleReset();
 }
 
+document.body.addEventListener('keypress', onKeyPress);
+function onKeyPress(e) {
+  /*if (
+    e.keyCode === 13 ||
+    (e.keyCode === 13 &&
+      e.shiftKey === false &&
+      e.ctrlKey === false &&
+      e.altKey === false)
+  ) {
+    // Enterキー除外
+  } else if (
+    e.keyCode === 32 ||
+    (e.keyCode === 32 &&
+      e.shiftKey === false &&
+      e.ctrlKey === false &&
+      e.altKey === false)
+  ) {
+    // Enterキー除外
+  } else {
+    return false;
+  }
+  // ここに処理をかく
+  sound();*/
+  console.log({
+    keyCode:e.keyCode,
+    shiftKey:e.shiftKey,
+    ctrlKey:e.ctrlKey,
+    altKey:e.altKey,
+  });
+}
+
 function change() {
   const tn = document.querySelector("#title_name");
   const e = document.querySelector("#code");
