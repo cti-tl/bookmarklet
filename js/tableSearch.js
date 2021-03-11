@@ -2,7 +2,7 @@
   alert('ok');
 })();
 
-function(f, d, e, a, s1, s2, flg) {
+function test(f, d, e, a, s1, s2, flg) {
   if (~location.href.indexOf('RakWF21')) {
     f = document.getElementsByName('fr_main')[0].contentWindow;
     d = f.document;
