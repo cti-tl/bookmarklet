@@ -23,6 +23,12 @@ let mklet = {
     return str;
     console.log(str);
   },
+  links: () => {
+    let arr = [];
+    document.links.forEach((item,index)=>{arr.push({title:item.innerText.trim(),url:item.href})});
+    console.log(arr);
+    return arr;
+  },
   sample: (url) => {
     return `
 javascript: (function(d, j, s) {
