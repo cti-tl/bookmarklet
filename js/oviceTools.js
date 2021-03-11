@@ -33,6 +33,6 @@ let oviceTools = {
     return arr;
   },
   randomUser: () => {
-    return this.users()[Math.floor(Math.random() * this.users().length)];
+    return users()[Math.floor(Math.random() * users().length)];
   },
 };
