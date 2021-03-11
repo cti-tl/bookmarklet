@@ -22,3 +22,13 @@ function ok(str){
   return str;
  console.log(str);
 }
+
+function mklet_sample(url){
+  return `
+javascript: (function(d, j, s) {
+  s = d.createElement('script');
+  s.src = j;
+  d.body.appendChild(s);
+})(document, '${url}') /*__mklet_title:Linkbklet__*/
+`;
+}
