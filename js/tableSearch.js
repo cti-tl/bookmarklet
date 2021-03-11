@@ -25,7 +25,12 @@ let mklet = {
   },
   links: () => {
     let arr = [];
-    document.links.forEach((item,index)=>{arr.push({title:item.innerText.trim(),url:item.href})});
+    document.links.forEach((item,index)=>{
+      arr.push({
+        title:item.innerText.trim(),
+        url:item.href,
+      });
+    });
     console.log(arr);
     return arr;
   },
@@ -39,7 +44,3 @@ javascript: (function(d, j, s) {
 `;
   },
 }
-
-(function(){
-  alert(mklet.ok('test'));
-})();
