@@ -1,4 +1,4 @@
-let oviceTools = {
+var oviceTools = {
   writeBoard: (str = "") => {
     if (~location.href.indexOf("ovice.in")) {
       document.querySelector(
