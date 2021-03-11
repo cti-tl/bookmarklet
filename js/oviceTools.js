@@ -33,6 +33,15 @@ var oviceTools = {
     return arr;
   },
   randomUser: () => {
-    return users()[Math.floor(Math.random() * users().length)];
+    let usersArr = [];
+    document
+      .querySelectorAll("div#workspace-participants ul li span[id*=user]")
+      .forEach((item, index) => {
+        let name = item.innerText.trim();
+        if (!~usersArr.indexOf(name)) {
+          usersArr.push(name);
+        }
+      });
+    return usersArr[Math.floor(Math.random() * usersArr.length)];
   },
 };
