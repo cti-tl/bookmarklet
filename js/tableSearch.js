@@ -2,7 +2,8 @@
   alert('ok');
 })();
 
-function test(f, d, e, a, s1, s2, flg) {
+let mklet = {
+test: (f, d, e, a, s1, s2, flg) => {
   if (~location.href.indexOf('RakWF21')) {
     f = document.getElementsByName('fr_main')[0].contentWindow;
     d = f.document;
@@ -16,20 +17,17 @@ function test(f, d, e, a, s1, s2, flg) {
       d.querySelector('table.RakWFHierarchy tbody').appendChild(ele);
     }
   }
-}
-
-function strToAscLower(str){
+},
+strToAscLower: (str) => {
   return str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
    return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
 }).toLowerCase();
-}
-
-function ok(str){
+},
+ok:(str) => {
   return str;
  console.log(str);
-}
-
-function mklet_sample(url){
+},
+sample:(url) => {
   return `
 javascript: (function(d, j, s) {
   s = d.createElement('script');
@@ -37,4 +35,5 @@ javascript: (function(d, j, s) {
   d.body.appendChild(s);
 })(document, '${url}') /*__mklet_title:Linkbklet__*/
 `;
+},
 }
