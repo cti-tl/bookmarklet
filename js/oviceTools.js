@@ -20,4 +20,16 @@ let oviceTools = {
   micOff: () => {
     ovice.setMic(false);
   },
+  users: () => {
+    let arr = [];
+    document
+      .querySelectorAll("div#workspace-participants ul li span[id*=user]")
+      .forEach((item, index) => {
+        let name = item.innerText.trim();
+        if (!~arr.indexOf(name)) {
+          arr.push(name);
+        }
+      });
+    return arr;
+  },
 };
