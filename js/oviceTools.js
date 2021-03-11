@@ -14,4 +14,10 @@ let oviceTools = {
     }
     return req;
   },
+  micOn: () => {
+    ovice.setMic(true);
+  },
+  micOff: () => {
+    ovice.setMic(false);
+  },
 };
