@@ -15,6 +15,7 @@ function(f, d, e, a, s1, s2, flg) {
 }
 
 function ok(str){
+  return str;
  console.log(str);
 }
 
