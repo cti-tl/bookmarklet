@@ -25,7 +25,7 @@ mklet = {
   },
   links: (filter={}) => {
     let arr = [];
-    if(!document.links)return arr;
+    if(document.links.length === 0)return arr;
     document.links.forEach((item,index)=>{
       if(filter === {} || ~item.innerText.trim().indexOf(filter['title']) || ~item.href.indexOf(filter['url']) ){
       arr.push({
