@@ -1,5 +1,5 @@
 class mkletClass {
-  test: (f, d, e, a, s1, s2, flg) => {
+  static test = (f, d, e, a, s1, s2, flg) => {
     if (~location.href.indexOf('RakWF21')) {
       f = document.getElementsByName('fr_main')[0].contentWindow;
       d = f.document;
@@ -13,17 +13,17 @@ class mkletClass {
         d.querySelector('table.RakWFHierarchy tbody').appendChild(ele);
       }
     }
-  },
-  strToAscLower: (str) => {
+  }
+  static strToAscLower = (str) => {
     return str.replace(/[Ａ-Ｚａ-ｚ０-９]/g, function(s) {
       return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
     }).toLowerCase();
-  },
-  ok: (str) => {
+  }
+  static ok = (str) => {
     console.log(str);
     return str;
-  },
-  links: (filter={}) => {
+  }
+  static links = (filter={}) => {
     let arr = [];
     if(document.links.length === 0)return arr;
     document.links.forEach((item,index)=>{
@@ -36,8 +36,8 @@ class mkletClass {
     });
     console.log(arr);
     return arr;
-  },
-  jsonToTable:(json) => {
+  }
+  static jsonToTable = (json) => {
     // table要素を生成
       let table = document.createElement('table');
 
@@ -72,11 +72,11 @@ class mkletClass {
         }
       // 生成したtable要素を追加する
       return table;
-  },
-  teststr:() => {
+  }
+  static teststr = () => {
     return this.ok('test ok');
-  },
-  sample: (url) => {
+  }
+  static sample = (url) => {
     return `
 javascript: (function(d, j, s) {
   s = d.createElement('script');
@@ -84,6 +84,6 @@ javascript: (function(d, j, s) {
   d.body.appendChild(s);
 })(document, '${url}') /*__mklet_title:Linkbklet__*/
 `;
-  },
+  }
 }
 mklet = new mkletClass();
