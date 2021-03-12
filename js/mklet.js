@@ -1,4 +1,29 @@
 class mklet {
+  static inTitle = (keyword) => {
+    return ~location.title.indexOf(keyword);
+  };
+  static inUrl = (keyword) => {
+    return ~location.href.indexOf(keyword);
+  };
+  static getWindows(func = () => {}) {
+    let winArr = [];
+    let frameItems = document.querySelectorAll("iframe");
+    winArr.push(window);
+    func(window);
+    frameItems.forEach((item) => {
+      winArr.push(item.contentWindow);
+      func(item.contentWindow);
+    });
+    return winArr;
+  }
+  static getWindowDocuments(func = () => {}) {
+    let docArr = [];
+    this.getWindows((win) => {
+      docArr.push(win.document);
+      func(win.document);
+    });
+    return docArr;
+  }
   static test = (f, d, e, a, s1, s2, flg) => {
     if (~location.href.indexOf("RakWF21")) {
       f = document.getElementsByName("fr_main")[0].contentWindow;
@@ -27,18 +52,20 @@ class mklet {
   };
   static links = (filter = {}) => {
     let arr = [];
-    if (document.links.length === 0) return arr;
-    document.links.forEach((item, index) => {
-      if (
-        filter === {} ||
-        ~item.innerText.trim().indexOf(filter["title"]) ||
-        ~item.href.indexOf(filter["url"])
-      ) {
-        arr.push({
-          title: item.innerText.trim(),
-          url: item.href,
-        });
-      }
+    this.getWindowDocuments((doc) => {
+      if (doc.links.length === 0) return arr;
+      doc.links.forEach((item, index) => {
+        if (
+          filter === {} ||
+          ~item.innerText.trim().indexOf(filter["title"]) ||
+          ~item.href.indexOf(filter["url"])
+        ) {
+          arr.push({
+            title: item.innerText.trim(),
+            url: item.href,
+          });
+        }
+      });
     });
     console.log(arr);
     return arr;
@@ -78,4 +105,3 @@ javascript: (function(d, j, s) {
 `;
   };
 }
-mklet = new mkletClass();
