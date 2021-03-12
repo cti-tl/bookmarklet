@@ -34,6 +34,42 @@ let mklet = {
     console.log(arr);
     return arr;
   },
+  jsonToTable:(json) => {
+    // table要素を生成
+      let table = document.createElement('table');
+
+      // ヘッダーを作成
+      let tr = document.createElement('tr');
+      for (key in json[0]) {
+            // th要素を生成
+            let th = document.createElement('th');
+            // th要素内にテキストを追加
+            th.textContent = key;
+            // th要素をtr要素の子要素に追加
+            tr.appendChild(th);
+            }
+        // tr要素をtable要素の子要素に追加
+        table.appendChild(tr);
+
+      // テーブル本体を作成
+      for (let i = 0; i < json.length; i++) {
+        // tr要素を生成
+        let tr = document.createElement('tr');
+        // th・td部分のループ
+        for (key in json[0]) {
+              // td要素を生成
+              let td = document.createElement('td');
+              // td要素内にテキストを追加
+              td.textContent = json[i][key];
+              // td要素をtr要素の子要素に追加
+              tr.appendChild(td);
+            }
+        // tr要素をtable要素の子要素に追加
+        table.appendChild(tr);
+        }
+      // 生成したtable要素を追加する
+      return table;
+  },
   sample: (url) => {
     return `
 javascript: (function(d, j, s) {
