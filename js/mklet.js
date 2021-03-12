@@ -11,8 +11,12 @@ class mklet {
     winArr.push(window);
     func(window);
     frameItems.forEach((item) => {
-      winArr.push(item.contentWindow);
-      func(item.contentWindow);
+      try {
+        winArr.push(item.contentWindow);
+        func(item.contentWindow);
+      } catch (e) {
+        console.log(e);
+      }
     });
     return winArr;
   }
