@@ -23,13 +23,15 @@ mklet = {
     return str;
     console.log(str);
   },
-  links: () => {
+  links: (let filter={}) => {
     let arr = [];
     document.links.forEach((item,index)=>{
+      if(filter === {} || ~item.innerText.trim().indexOf(filter['title']) || ~item.href.indexOf(filter['url']) ){
       arr.push({
         title:item.innerText.trim(),
         url:item.href,
       });
+      };
     });
     console.log(arr);
     return arr;
