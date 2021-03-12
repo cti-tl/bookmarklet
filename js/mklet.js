@@ -23,8 +23,12 @@ class mklet {
   static getWindowDocuments(func = () => {}) {
     let docArr = [];
     this.getWindows((win) => {
-      docArr.push(win.document);
-      func(win.document);
+      try {
+        docArr.push(win.document);
+        func(win.document);
+      } catch (e) {
+        console.log(e);
+      }
     });
     return docArr;
   }
