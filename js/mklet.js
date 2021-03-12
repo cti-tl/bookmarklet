@@ -12,10 +12,11 @@ class mklet {
     func(window);
     frameItems.forEach((item) => {
       try {
+        url = item.contentWindow.location.href;
         winArr.push(item.contentWindow);
         func(item.contentWindow);
       } catch (e) {
-        console.log(e);
+        // console.log(e);
       }
     });
     return winArr;
