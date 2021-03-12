@@ -51,7 +51,7 @@ body {
 }
 
 body {
-  /* 左斜め */
+  /* 左斜め
   background-color: var(--main-stripe);
   background-image: repeating-linear-gradient(
     45deg,
@@ -61,6 +61,7 @@ body {
     transparent 14px
   );
   transition: 0.3s;
+  */
 }
 
 header {
