@@ -20,8 +20,8 @@ mklet = {
     }).toLowerCase();
   },
   ok: (str) => {
-    return str;
     console.log(str);
+    return str;
   },
   links: (filter={}) => {
     let arr = [];
@@ -72,6 +72,9 @@ mklet = {
         }
       // 生成したtable要素を追加する
       return table;
+  },
+  teststr:() => {
+    return this.ok('test ok');
   },
   sample: (url) => {
     return `
