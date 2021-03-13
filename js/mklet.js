@@ -76,7 +76,6 @@ class mklet {
         }
       });
     });
-    console.log(arr);
     return arr;
   };
   static jsonToTable = (json) => {
@@ -112,5 +111,21 @@ javascript: (function(d, j, s) {
   d.body.appendChild(s);
 })(document, '${url}') /*__mklet_title:Linkbklet__*/
 `;
+  };
+  static sliceByNumber = (array, number) => {
+    const length = Math.ceil(array.length / number);
+    return new Array(length)
+      .fill()
+      .map((_, i) => array.slice(i * number, (i + 1) * number));
+  };
+  static shuffleArr = (arr) => {
+    let length = arr.length;
+    for (let i = length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      let tmp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = tmp;
+    }
+    return arr;
   };
 }
