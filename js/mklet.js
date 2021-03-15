@@ -39,7 +39,6 @@ class mklet {
 
       win.style.position = 'absolute';
       win.style.zIndex = 1000;
-      document.body.append(win);
 
       moveAt(event.pageX, event.pageY);
 
