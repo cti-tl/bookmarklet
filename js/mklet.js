@@ -17,11 +17,13 @@ class mklet {
     win.style.width = "200px";
     win.style.height = "200px";
     win.style.boxShadow = "2px 2px 4px gray";
-    let closeBtn = document.createElement('button');
+    let closeBtn = document.createElement('div');
     closeBtn.innerText = "×";
     closeBtn.style.fontSize = "8px";
-    closeBtn.style.width = "20px";
-    closeBtn.style.height = "20px";
+    closeBtn.style.color = "gray";
+    closeBtn.style.padding = "3px";
+    closeBtn.style.width = "10px";
+    closeBtn.style.height = "10px";
     closeBtn.onclick = function(e) {
       console.log(e.target.parentNode.remove());
     };
