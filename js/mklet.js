@@ -5,7 +5,7 @@ class mklet {
   static inUrl = (keyword) => {
     return ~location.href.indexOf(keyword);
   };
-  static getWindows(func = () => {}) {
+  static getWindows = (func = () => {}) {
     let winArr = [];
     let frameItems = document.querySelectorAll("iframe");
     winArr.push(window);
