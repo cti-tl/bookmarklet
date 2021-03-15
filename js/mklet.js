@@ -21,9 +21,9 @@ class mklet {
     closeBtn.innerText = "×";
     closeBtn.style.fontSize = "8px";
     closeBtn.style.color = "gray";
-    closeBtn.style.padding = "3px";
-    closeBtn.style.width = "10px";
-    closeBtn.style.height = "10px";
+    closeBtn.style.margin = "1px";
+    closeBtn.style.width = "15px";
+    closeBtn.style.height = "15px";
     closeBtn.style.cursor = "pointer !important";
     closeBtn.onclick = function(e) {
       console.log(e.target.parentNode.remove());
