@@ -10,8 +10,6 @@ class mklet {
     win.name = "mklet_window";
     win.style.backgroundColor = "white";
     win.style.position = "fixed";
-    win.style.right = "5px";
-    win.style.top = "5px";
     win.style.padding = "5px";
     win.style.zIndex = 100;
     win.style.minWidth = "200px";
