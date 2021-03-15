@@ -13,11 +13,10 @@ class mklet {
     win.style.right = "5px";
     win.style.top = "5px";
     win.style.padding = "5px";
-    win.style.border = "solid";
     win.style.zIndex = 100;
     win.style.width = "200px";
     win.style.height = "200px";
-    win.style.boxShadow = "2px 2px 4px -2px gray inset";
+    win.style.boxShadow = "2px 2px 4px gray";
     let closeBtn = document.createElement('button');
     closeBtn.innerText = "×";
     closeBtn.style.fontSize = "8px";
