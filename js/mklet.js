@@ -14,8 +14,8 @@ class mklet {
     win.style.top = "5px";
     win.style.padding = "5px";
     win.style.zIndex = 100;
-    win.style.width = "200px";
-    win.style.height = "200px";
+    win.style.minWidth = "200px";
+    win.style.minHeight = "200px";
     win.style.boxShadow = "2px 2px 4px gray";
     let closeBtn = document.createElement('div');
     closeBtn.innerText = "×";
@@ -28,8 +28,13 @@ class mklet {
     closeBtn.onclick = function(e) {
       console.log(e.target.parentNode.remove());
     };
+    let panel = document.createElement('div');
+    panel.width = "auto";
+    panel.height = "auto";
     win.appendChild(closeBtn);
+    win.appendChild(panel);
     document.body.appendChild(win);
+    return panel;
   }
   static getWindows = (func = () => {}) => {
     let winArr = [];
