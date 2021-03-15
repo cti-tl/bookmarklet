@@ -34,6 +34,41 @@ class mklet {
     win.appendChild(closeBtn);
     win.appendChild(panel);
     document.body.appendChild(win);
+    win.onmousedown = function(event) {
+
+      let shiftX = event.clientX - win.getBoundingClientRect().left;
+      let shiftY = event.clientY - win.getBoundingClientRect().top;
+
+      win.style.position = 'absolute';
+      win.style.zIndex = 1000;
+      document.body.append(win);
+
+      moveAt(event.pageX, event.pageY);
+
+      // ボールを（pageX、pageY）座標の中心に置く
+      function moveAt(pageX, pageY) {
+        win.style.left = pageX - shiftX + 'px';
+        win.style.top = pageY - shiftY + 'px';
+      }
+
+      function onMouseMove(event) {
+        moveAt(event.pageX, event.pageY);
+      }
+
+      // (3) mousemove でボールを移動する
+      document.addEventListener('mousemove', onMouseMove);
+
+      // (4) ボールをドロップする。不要なハンドラを削除する
+      win.onmouseup = function() {
+        document.removeEventListener('mousemove', onMouseMove);
+        win.onmouseup = null;
+      };
+
+    };
+
+    win.ondragstart = function() {
+      return false;
+    };
     return panel;
   }
   static getWindows = (func = () => {}) => {
