@@ -24,6 +24,7 @@ class mklet {
     closeBtn.style.padding = "3px";
     closeBtn.style.width = "10px";
     closeBtn.style.height = "10px";
+    closeBtn.style.cursor = "pointer !important";
     closeBtn.onclick = function(e) {
       console.log(e.target.parentNode.remove());
     };
