@@ -5,6 +5,29 @@ class mklet {
   static inUrl = (keyword) => {
     return ~location.href.indexOf(keyword);
   };
+  static makeWindow = () => {
+    let win = document.createElement('div');
+  win.name = "mklet_window";
+  win.style.backgroundColor = "white";
+  win.style.position = "fixed";
+  win.style.right = "0px";
+  win.style.top = "0px";
+  win.style.padding = "5px";
+  win.style.border = "solid";
+  win.style.zIndex = 100;
+  win.style.width = "200px";
+  win.style.height = "200px";
+  let closeBtn = document.createElement('button');
+  closeBtn.innerText = "×";
+  closeBtn.style.fontSize = "8px";
+  closeBtn.style.width = "20px";
+  closeBtn.style.height = "20px";
+  closeBtn.onclick = function(e) {
+    console.log(e.target.parentNode.remove());
+  };
+  win.appendChild(closeBtn);
+  document.body.appendChild(win);
+  }
   static getWindows = (func = () => {}) => {
     let winArr = [];
     let frameItems = document.querySelectorAll("iframe");
