@@ -5,7 +5,7 @@ class mklet {
   static inUrl = (keyword) => {
     return ~location.href.indexOf(keyword);
   };
-  static makeWindow = () => {
+  static makeWindow = (func) => {
     let win = document.createElement('div');
     win.name = "mklet_window";
     win.style.backgroundColor = "white";
@@ -66,6 +66,9 @@ class mklet {
     win.ondragstart = function() {
       return false;
     };
+    win.onload = function() {
+      func(win,panel); 
+    }
     return panel;
   }
   static getWindows = (func = () => {}) => {
