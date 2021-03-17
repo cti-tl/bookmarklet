@@ -66,9 +66,7 @@ class mklet {
     win.ondragstart = function() {
       return false;
     };
-    win.onload = function() {
-      func(win,panel); 
-    }
+    func(win,panel); 
     return panel;
   }
   static getWindows = (func = () => {}) => {
