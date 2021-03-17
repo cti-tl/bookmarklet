@@ -29,6 +29,8 @@ class mklet {
     let panel = document.createElement('div');
     panel.width = "auto";
     panel.height = "auto";
+    panel.style.fontSize = "10px;";
+    panel.style.padding = "4px";
     win.appendChild(closeBtn);
     win.appendChild(panel);
     document.body.appendChild(win);
