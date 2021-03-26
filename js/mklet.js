@@ -5,6 +5,15 @@ class mklet {
   static inUrl = (keyword) => {
     return ~location.href.indexOf(keyword);
   };
+  static makeWindow = (func) => {
+    let window = document.createElement("div");
+    window.id = "mkletWindow";
+    let exitBtn = document.createElement("button");
+    exitBtn.onClick = function (e) {
+      e.target.parent.remove();
+    };
+    window.appendChild(exitBtn);
+  };
   static getWindows(func = () => {}) {
     let winArr = [];
     let frameItems = document.querySelectorAll("iframe");
