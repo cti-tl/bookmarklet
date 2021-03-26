@@ -20,8 +20,16 @@ var oviceTools = {
   micOff: () => {
     ovice.setMic(false);
   },
+  me: () => {
+    return ovice.webrtc.getUser(ovice.userId());
+  },
   usersdata: () => {
-    ovice.webrtc.users().filter((item) => {
+    return ovice.webrtc.users().filter((item) => {
+      return item.name && item;
+    });
+  },
+  usersdata: () => {
+    return ovice.webrtc.users().filter((item) => {
       return item.name && item;
     });
   },
