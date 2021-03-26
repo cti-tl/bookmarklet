@@ -21,12 +21,9 @@ var oviceTools = {
     ovice.setMic(false);
   },
   usersdata: () => {
-    ovice.webrtc
-      .users()
-      .map((item) => {
-        return item.name && item;
-      })
-      .filter(false);
+    ovice.webrtc.users().filter((item) => {
+      return item.name && item;
+    });
   },
   users: () => {
     let arr = [];
