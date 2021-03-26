@@ -22,7 +22,7 @@ class mklet {
     closeBtn.style.margin = "1px";
     closeBtn.style.width = "15px";
     closeBtn.style.height = "15px";
-    closeBtn.style.cursor = "pointer !important";
+    closeBtn.style.cursor = "pointer";
     closeBtn.onclick = function (e) {
       console.log(e.target.parentNode.remove());
     };
