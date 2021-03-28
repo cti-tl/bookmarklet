@@ -57,4 +57,38 @@ var oviceTools = {
       });
     return usersArr[Math.floor(Math.random() * usersArr.length)];
   },
+  newUserCheck: async () => {
+    let data = [];
+    await axios
+      .get("https://cti1650.xsrv.jp/ovice/api_test.php?key=itkingdom")
+      .then(function (res) {
+        // console.log(res);
+        data = res.data;
+      });
+    console.log(data);
+    let arr = [];
+    let users = ovice.webrtc.getUsers();
+    let elements = document.querySelectorAll(
+      "div#workspace-participants span[id*=user-]"
+    );
+    let dataArr = [...elements];
+    console.log(dataArr);
+    dataArr.forEach((item, index) => {
+      console.log(item);
+      let id = item.id.replace("user-", "");
+      console.log(id);
+      let name = item.innerText.trim();
+      let userId = users.filter((item) => {
+        return item.id == id && item;
+      });
+      console.log(userId);
+      let user = ovice.webrtc.getUser(userId.userId);
+      let objId = data.login_users[user.userId].user_id;
+      let counter = data.login_counter[objId];
+      if (counter) {
+        item.innerHTML = user.name + "(" + counter.counter + ")";
+      }
+    });
+    return arr;
+  },
 };
