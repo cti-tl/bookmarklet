@@ -57,15 +57,16 @@ var oviceTools = {
       });
     return usersArr[Math.floor(Math.random() * usersArr.length)];
   },
-  newUserCheck: function () {
+  newUserCheck: async function () {
     let data = [];
-    axios
+    await axios
       .get("https://cti1650.xsrv.jp/ovice/api_test.php?key=itkingdom")
       .then(function (res) {
         data = res.data;
+        console.log(data);
         return data;
       });
-    console.log(data);
+
     /*
     let arr = [];
     let users = ovice.webrtc.getUsers();
