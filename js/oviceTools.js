@@ -63,6 +63,7 @@ var oviceTools = {
       .get("https://cti1650.xsrv.jp/ovice/api_test.php?key=itkingdom")
       .then(function (res) {
         data = res.data;
+        return data;
       });
     console.log(data);
     /*
