@@ -57,12 +57,11 @@ var oviceTools = {
       });
     return usersArr[Math.floor(Math.random() * usersArr.length)];
   },
-  newUserCheck: async () => {
+  newUserCheck: async function () {
     let data = [];
     await axios
       .get("https://cti1650.xsrv.jp/ovice/api_test.php?key=itkingdom")
       .then(function (res) {
-        // console.log(res);
         data = res.data;
       });
     console.log(data);
@@ -91,6 +90,6 @@ var oviceTools = {
       }
     });
     */
-    return arr;
+    return data;
   },
 };
