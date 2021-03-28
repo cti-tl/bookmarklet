@@ -59,6 +59,10 @@ var oviceTools = {
   },
   newUserCheck: async function () {
     let data = [];
+    await fetch("https://cti1650.xsrv.jp/ovice/api_test.php?key=itkingdom")
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+    /*
     await axios
       .get("https://cti1650.xsrv.jp/ovice/api_test.php?key=itkingdom")
       .then(function (res) {
@@ -67,7 +71,7 @@ var oviceTools = {
         return data;
       });
 
-    /*
+    
     let arr = [];
     let users = ovice.webrtc.getUsers();
     let elements = document.querySelectorAll(
