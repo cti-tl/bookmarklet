@@ -66,6 +66,7 @@ var oviceTools = {
         data = res.data;
       });
     console.log(data);
+    /*
     let arr = [];
     let users = ovice.webrtc.getUsers();
     let elements = document.querySelectorAll(
@@ -89,6 +90,7 @@ var oviceTools = {
         item.innerHTML = user.name + "(" + counter.counter + ")";
       }
     });
+    */
     return arr;
   },
 };
