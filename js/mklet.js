@@ -5,6 +5,15 @@ class mklet {
   static inUrl = (keyword) => {
     return ~location.href.indexOf(keyword);
   };
+  static loadScript(url, func = {}) {
+    let script = document.createElement("script");
+    script.src = url;
+    document.body.appendChild(script);
+    script.onload = function () {
+      func();
+      this.remove();
+    };
+  }
   static makeWindow = (func) => {
     let win = document.createElement("div");
     win.name = "mklet_window";
@@ -143,13 +152,17 @@ class mklet {
     return arr;
   };
   static imgs = () => {
-    let arr = [];
+    let imgsArr = [];
+    let imgLinkArr = [];
     this.getWindowDocuments((doc) => {
       doc.querySelectorAll("img").forEach((item, index) => {
-        arr.push(item);
+        if (item.src && !~imgLinkArr.indexOf(item.src)) {
+          imgLinkArr.push(item.src);
+          imgsArr.push(item);
+        }
       });
     });
-    return arr;
+    return imgsArr;
   };
   static jsonToTable = (json) => {
     let table = document.createElement("table");
