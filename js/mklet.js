@@ -5,7 +5,7 @@ class mklet {
   static inUrl = (keyword) => {
     return ~location.href.indexOf(keyword);
   };
-  static loadScript(url, func = {}) {
+  static loadScript = (url, func = {}) => {
     let script = document.createElement("script");
     script.src = url;
     document.body.appendChild(script);
@@ -13,7 +13,7 @@ class mklet {
       func();
       this.remove();
     };
-  }
+  };
   static makeWindow = (func) => {
     let win = document.createElement("div");
     win.name = "mklet_window";
