@@ -142,6 +142,15 @@ class mklet {
     });
     return arr;
   };
+  static imgs = () => {
+    let arr = [];
+    this.getWindowDocuments((doc) => {
+      doc.querySelectorAll("img").forEach((item, index) => {
+        arr.push(item);
+      });
+    });
+    return arr;
+  };
   static jsonToTable = (json) => {
     let table = document.createElement("table");
 

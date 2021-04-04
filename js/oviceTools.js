@@ -62,6 +62,7 @@ var oviceTools = {
     await fetch("https://cti1650.xsrv.jp/ovice/api_test.php?key=itkingdom")
       .then((response) => response.json())
       .then((data) => console.log(data));
+    console.log(response);
     /*
     await axios
       .get("https://cti1650.xsrv.jp/ovice/api_test.php?key=itkingdom")
